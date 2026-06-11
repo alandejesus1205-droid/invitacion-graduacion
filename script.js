@@ -1,12 +1,10 @@
-const openBtn = document.getElementById("openBtn");
-const cover = document.getElementById("cover");
-const invite = document.getElementById("invite");
 const music = document.getElementById("music");
 
-openBtn.addEventListener("click", () => {
-  cover.classList.add("hidden");
-  invite.classList.remove("hidden");
-  music.play().catch(() => {});
+// Reproducir música automáticamente
+window.addEventListener('load', () => {
+  music.play().catch(() => {
+    console.log('Autoplay bloqueado');
+  });
 });
 
 const eventDate = new Date("2026-07-10T20:00:00").getTime();
@@ -16,7 +14,10 @@ function updateCountdown() {
   const distance = eventDate - now;
 
   if (distance <= 0) {
-    document.getElementById("countdown").innerHTML = "<p>¡Hoy es la gran noche!</p>";
+    document.getElementById("days").textContent = "0";
+    document.getElementById("hours").textContent = "0";
+    document.getElementById("minutes").textContent = "0";
+    document.getElementById("seconds").textContent = "0";
     return;
   }
 
@@ -32,6 +33,8 @@ updateCountdown();
 const qrText = window.location.href;
 new QRCode(document.getElementById("qrcode"), {
   text: qrText,
-  width: 180,
-  height: 180
+  width: 200,
+  height: 200,
+  colorDark: "#d4af37",
+  colorLight: "#0a0a0a"
 });
