@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Invitación Especial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="sparkles"></div>
+
+  <!-- PORTADA (se oculta al hacer clic) -->
+  <div class="cover" id="cover">
+    <div>
+      <div class="seal">🎉</div>
+      <h1>¡Estás Invitado!</h1>
+      <p>Toca el botón para descubrir</p>
+      <button id="openBtn">Abrir Invitación</button>
+    </div>
+  </div>
+
+  <!-- INVITACIÓN (se muestra al hacer clic) -->
+  <div class="invite hidden" id="invite">
+    <!-- Música de fondo -->
+    <audio id="music" loop>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- HERO -->
+    <div class="card hero">
+      <p class="tag">🎊 Evento Especial</p>
+      <h1>¡La <span>Gran Noche</span> Llega!</h1>
+      <p class="quote">"Celebremos juntos este momento inolvidable"</p>
+    </div>
+
+    <!-- DETALLES DEL EVENTO -->
+    <div class="card">
+      <h2>📍 Detalles</h2>
+      <div class="details">
+        <div class="detail">
+          <span>📅</span>
+          <h3>Fecha</h3>
+          <p>10 de Julio, 2026</p>
+        </div>
+        <div class="detail">
+          <span>🕐</span>
+          <h3>Hora</h3>
+          <p>8:00 PM</p>
+        </div>
+        <div class="detail">
+          <span>📍</span>
+          <h3>Lugar</h3>
+          <p>Salón Principal</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CUENTA REGRESIVA -->
+    <div class="card">
+      <h2>⏳ Faltan:</h2>
+      <div class="countdown">
+        <div>
+          <b id="days">0</b>
+          <span>DÍAS</span>
+        </div>
+        <div>
+          <b id="hours">0</b>
+          <span>HORAS</span>
+        </div>
+        <div>
+          <b id="minutes">0</b>
+          <span>MINUTOS</span>
+        </div>
+        <div>
+          <b id="seconds">0</b>
+          <span>SEGUNDOS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CÓDIGO QR -->
+    <div class="card qr-card">
+      <h2>📱 Comparte esta invitación</h2>
+      <div id="qrcode"></div>
+    </div>
+
+    <!-- BOTONES DE ACCIÓN -->
+    <div class="card" style="text-align: center;">
+      <div class="actions">
+        <a href="https://wa.me/?text=¡Estoy invitado!" class="btn">WhatsApp</a>
+        <a href="mailto:?subject=¡Invitación Especial!" class="btn">Correo</a>
+      </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+      <p>Nos vemos pronto 🎉</p>
+    </footer>
+  </div>
+
+  <!-- LIBRERÍA PARA GENERAR CÓDIGOS QR -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
