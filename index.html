@@ -3,88 +3,297 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Invitación Especial</title>
+  <title>Mi Invitación de Graduación</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="bg"></div>
   <div class="sparkles"></div>
+  <div class="floating-particles"></div>
 
-  <!-- INVITACIÓN DIRECTA (sin portada) -->
-  <div class="invite" id="invite">
-    <!-- HERO -->
-    <div class="card hero">
-      <p class="tag">🎊 Evento Especial</p>
-      <h1>¡La <span>Gran Noche</span> Llega!</h1>
-      <p class="quote">"Celebremos juntos este momento inolvidable"</p>
-    </div>
-
-    <!-- DETALLES DEL EVENTO -->
-    <div class="card">
-      <h2>📍 Detalles</h2>
-      <div class="details">
-        <div class="detail">
-          <span>📅</span>
-          <h3>Fecha</h3>
-          <p>10 de Julio, 2026</p>
-        </div>
-        <div class="detail">
-          <span>🕐</span>
-          <h3>Hora</h3>
-          <p>8:00 PM</p>
-        </div>
-        <div class="detail">
-          <span>📍</span>
-          <h3>Lugar</h3>
-          <p>Salón Principal</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- CUENTA REGRESIVA -->
-    <div class="card">
-      <h2>⏳ Faltan:</h2>
-      <div class="countdown">
-        <div>
-          <b id="days">0</b>
-          <span>DÍAS</span>
-        </div>
-        <div>
-          <b id="hours">0</b>
-          <span>HORAS</span>
-        </div>
-        <div>
-          <b id="minutes">0</b>
-          <span>MINUTOS</span>
-        </div>
-        <div>
-          <b id="seconds">0</b>
-          <span>SEGUNDOS</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- CÓDIGO QR -->
-    <div class="card qr-card">
-      <h2>📱 Comparte esta invitación</h2>
-      <div id="qrcode"></div>
-    </div>
-
-    <!-- BOTONES DE ACCIÓN -->
-    <div class="card" style="text-align: center;">
-      <div class="actions">
-        <a href="https://wa.me/?text=¡Estoy invitado!" class="btn">WhatsApp</a>
-        <a href="mailto:?subject=¡Invitación Especial!" class="btn">Correo</a>
-      </div>
-    </div>
-
-    <!-- PIE DE PÁGINA -->
-    <footer>
-      <p>Nos vemos pronto 🎉</p>
-    </footer>
+  <!-- MÚSICA DE FONDO -->
+  <div class="music-control">
+    <button id="musicToggle" class="music-btn">🔊 Música</button>
   </div>
 
-  <!-- LIBRERÍA PARA GENERAR CÓDIGOS QR -->
+  <!-- CONTENIDO ÚNICO -->
+  <div class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="confetti-button-hero">
+          <button onclick="launchConfetti()" class="interactive-btn">✨ ¡Celebra! ✨</button>
+        </div>
+        
+        <p class="tag">🎊 Lo logramos 🎊</p>
+        <h1 class="title">¡La <span>Gran Noche</span> Llega!</h1>
+        <p class="subtitle">"Celebremos juntos este momento inolvidable"</p>
+        
+        <div class="countdown">
+          <div class="countdown-box">
+            <span id="days" class="number">0</span>
+            <span class="label">DÍAS</span>
+          </div>
+          <div class="countdown-box">
+            <span id="hours" class="number">0</span>
+            <span class="label">HORAS</span>
+          </div>
+          <div class="countdown-box">
+            <span id="minutes" class="number">0</span>
+            <span class="label">MINUTOS</span>
+          </div>
+          <div class="countdown-box">
+            <span id="seconds" class="number">0</span>
+            <span class="label">SEGUNDOS</span>
+          </div>
+        </div>
+
+        <div class="diploma-animation">🎓</div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DETALLES -->
+    <section class="details-section" id="detalles">
+      <h2>📍 Detalles del Evento</h2>
+      
+      <div class="details-grid">
+        <div class="detail-card" onmouseover="this.style.transform='translateY(-15px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div class="detail-icon">📅</div>
+          <h3>Fecha</h3>
+          <p>10 de Julio, 2026</p>
+          <p class="detail-extra">Martes</p>
+        </div>
+
+        <div class="detail-card" onmouseover="this.style.transform='translateY(-15px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div class="detail-icon">🕐</div>
+          <h3>Hora</h3>
+          <p>8:00 PM</p>
+          <p class="detail-extra">Llegada: 7:30 PM</p>
+        </div>
+
+        <div class="detail-card" onmouseover="this.style.transform='translateY(-15px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div class="detail-icon">📍</div>
+          <h3>Lugar</h3>
+          <p>Salón Principal</p>
+          <p class="detail-extra">Centro de Convenciones</p>
+        </div>
+
+        <div class="detail-card" onmouseover="this.style.transform='translateY(-15px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div class="detail-icon">🎓</div>
+          <h3>Institución</h3>
+          <p>Escuela/Universidad</p>
+          <p class="detail-extra">Promoción 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN UBICACIÓN -->
+    <section class="location-section" id="ubicacion">
+      <h2>🗺️ ¿Cómo Llegar?</h2>
+      
+      <div class="location-content">
+        <div class="map-interactive" onclick="openMaps()">
+          <div class="map-marker">📍</div>
+          <p>Centro de Convenciones<br>Calle Principal #123<br>Ciudad, País</p>
+          <p class="map-hint">Haz clic para abrir Google Maps</p>
+        </div>
+
+        <div class="transport-list">
+          <div class="transport-item" onclick="toggleTransport(this)">
+            <span class="transport-icon">🚗</span>
+            <div class="transport-info">
+              <h4>En Auto</h4>
+              <p>Estacionamiento disponible. Llega 30 min antes.</p>
+            </div>
+          </div>
+
+          <div class="transport-item" onclick="toggleTransport(this)">
+            <span class="transport-icon">🚌</span>
+            <div class="transport-info">
+              <h4>Transporte Público</h4>
+              <p>Línea 5 - Parada Centro, a 2 cuadras.</p>
+            </div>
+          </div>
+
+          <div class="transport-item" onclick="toggleTransport(this)">
+            <span class="transport-icon">🚕</span>
+            <div class="transport-info">
+              <h4>Taxi/Rideshare</h4>
+              <p>Centro de Convenciones</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN AGENDA -->
+    <section class="timeline-section" id="agenda">
+      <h2>⏰ Agenda del Día</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item" onclick="expandTimeline(this)">
+          <div class="timeline-time">7:30 PM</div>
+          <div class="timeline-content">
+            <h4>Llegada y Registro</h4>
+            <p>Recepción y bienvenida de invitados</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" onclick="expandTimeline(this)">
+          <div class="timeline-time">8:00 PM</div>
+          <div class="timeline-content">
+            <h4>Ceremonia de Graduación</h4>
+            <p>Acto oficial de entrega de diplomas</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" onclick="expandTimeline(this)">
+          <div class="timeline-time">9:00 PM</div>
+          <div class="timeline-content">
+            <h4>Sesión de Fotos</h4>
+            <p>Fotografías individuales y grupales</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" onclick="expandTimeline(this)">
+          <div class="timeline-time">9:30 PM</div>
+          <div class="timeline-content">
+            <h4>Celebración y Brindis</h4>
+            <p>Convivio con toda la promoción</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" onclick="expandTimeline(this)">
+          <div class="timeline-time">11:00 PM</div>
+          <div class="timeline-content">
+            <h4>Despedida</h4>
+            <p>Fin de la ceremonia</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN VESTIMENTA -->
+    <section class="dress-section" id="vestimenta">
+      <h2>👔 Código de Vestimenta</h2>
+      
+      <div class="dress-content">
+        <div class="dress-card">
+          <h3>Formal Elegante</h3>
+          <p>Se requiere vestimenta formal:</p>
+          <div class="dress-list">
+            <label class="dress-item">
+              <input type="checkbox" onchange="toggleDressItem(this)">
+              <span>👔 Trajes oscuros o vestidos largos</span>
+            </label>
+            <label class="dress-item">
+              <input type="checkbox" onchange="toggleDressItem(this)">
+              <span>👞 Zapatos formales</span>
+            </label>
+            <label class="dress-item">
+              <input type="checkbox" onchange="toggleDressItem(this)">
+              <span>💍 Accesorios elegantes</span>
+            </label>
+            <label class="dress-item">
+              <input type="checkbox" onchange="toggleDressItem(this)">
+              <span>✨ Colores: Negro, blanco, dorado</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="outfit-preview">
+          <div class="outfit-item" id="outfit1">👔</div>
+          <div class="outfit-item" id="outfit2">👗</div>
+          <p>Los graduados usarán toga y birrete ✨</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN GALERÍA INTERACTIVA -->
+    <section class="gallery-section" id="galeria">
+      <h2>📸 Galería de Momentos</h2>
+      
+      <div class="gallery-interactive">
+        <div class="gallery-item" onmouseover="hoverGallery(this)" onmouseout="unhoverGallery(this)">
+          <span class="gallery-emoji">🎓</span>
+          <p>Momentos de Estudio</p>
+        </div>
+        <div class="gallery-item" onmouseover="hoverGallery(this)" onmouseout="unhoverGallery(this)">
+          <span class="gallery-emoji">👥</span>
+          <p>Con Amigos</p>
+        </div>
+        <div class="gallery-item" onmouseover="hoverGallery(this)" onmouseout="unhoverGallery(this)">
+          <span class="gallery-emoji">📚</span>
+          <p>Recuerdos</p>
+        </div>
+        <div class="gallery-item" onmouseover="hoverGallery(this)" onmouseout="unhoverGallery(this)">
+          <span class="gallery-emoji">✨</span>
+          <p>Logros</p>
+        </div>
+        <div class="gallery-item" onmouseover="hoverGallery(this)" onmouseout="unhoverGallery(this)">
+          <span class="gallery-emoji">🌟</span>
+          <p>Aventuras</p>
+        </div>
+        <div class="gallery-item" onmouseover="hoverGallery(this)" onmouseout="unhoverGallery(this)">
+          <span class="gallery-emoji">🎉</span>
+          <p>Celebración</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CONFIRMACIÓN INTERACTIVA -->
+    <section class="rsvp-section" id="confirmacion">
+      <h2>✅ Confirma tu Asistencia</h2>
+      
+      <div class="rsvp-content">
+        <div class="rsvp-buttons">
+          <button class="rsvp-btn yes" onclick="selectRSVP('si', this)">
+            <span class="rsvp-emoji">✅</span>
+            <span>Iré</span>
+          </button>
+          <button class="rsvp-btn no" onclick="selectRSVP('no', this)">
+            <span class="rsvp-emoji">❌</span>
+            <span>No Puedo</span>
+          </button>
+          <button class="rsvp-btn maybe" onclick="selectRSVP('quizas', this)">
+            <span class="rsvp-emoji">❓</span>
+            <span>Quizás</span>
+          </button>
+        </div>
+
+        <div class="form-section">
+          <input type="text" id="nombre" placeholder="Tu nombre" class="form-input">
+          <input type="email" id="email" placeholder="Tu email" class="form-input">
+          <input type="number" id="acompanantes" min="1" max="5" value="1" class="form-input">
+          <button onclick="enviarRSVP()" class="submit-btn">Enviar Confirmación</button>
+        </div>
+
+        <div class="contact-section">
+          <p>O comparte por:</p>
+          <div class="contact-buttons">
+            <a href="https://wa.me/?text=Confirmo%20mi%20asistencia%20a%20tu%20graduación" class="contact-btn whatsapp" target="_blank">WhatsApp</a>
+            <a href="mailto:?subject=Confirmación%20de%20Asistencia" class="contact-btn email">Email</a>
+          </div>
+        </div>
+
+        <div class="qr-display">
+          <h3>Comparte esta invitación</h3>
+          <div id="qrcode"></div>
+          <p>Escanea para compartir con otros</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>¡Nos vemos pronto! 🎉</p>
+      <div class="footer-hearts">❤️ 💛 💚 💙 💜</div>
+    </footer>
+
+  </div>
+
+  <!-- SCRIPT QR -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script src="script.js"></script>
 </body>
