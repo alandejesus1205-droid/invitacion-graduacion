@@ -1,12 +1,3 @@
-const music = document.getElementById("music");
-
-// Reproducir música automáticamente
-window.addEventListener('load', () => {
-  music.play().catch(() => {
-    console.log('Autoplay bloqueado');
-  });
-});
-
 const eventDate = new Date("2026-07-10T20:00:00").getTime();
 
 function updateCountdown() {
